@@ -1,0 +1,38 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+footer {
+  width: 100%;
+  background-color: $blackColor;
+  border-radius: 20px 20px 0 0;
+  padding: 15px;
+  margin-top: 50px;
+  .text {
+    @include d-flex(space-between, start, row);
+    p {
+      font-size: 60px;
+      flex-basis: 30%;
+      color: $whiteColor;
+      @include responsive(small) {
+        max-width: 100%;
+      }
+    }
+    span {
+      color: var(--text-color);
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+  }
+  .social {
+    @include d-flex(end, center, row);
+    a {
+      color: $blackColor;
+      @include d-flex(center, center, row);
+      width: 30px;
+      height: 30px;
+      background-color: $whiteColor;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.trending-persons {
+  margin-top: 50px;
+  padding-left: 20px;
+  position: relative;
+
+  .heading {
+    h3 {
+      color: $whiteColor;
+      margin: 20px 0;
+      text-align: center;
+      font-size: 25px;
+      text-transform: uppercase;
+    }
+  }
+  .wrapper {
+    .trending-person {
+      display: flex;
+      margin-right: 10px;
+      border-radius: 10px;
+
+      .image {
+        min-width: 100px;
+        img,
+        .img {
+          max-width: 100%;
+          border-radius: 20px 0 0 20px;
+          background-color: $blackColor;
+          min-height: 154px;
+        }
+      }
+      .details {
+        @include d-flex(end, start, column);
+
+        padding: 10px;
+        border-radius: 0 20px 20px 0;
+        background-color: $blackColor;
+        h4 {
+          color: $whiteColor;
+          // font-size: 16px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 110px;
+        }
+        .rate {
+          margin-top: 10px;
+          @include d-flex(start, center, row);
+          color: $whiteColor;
+          font-size: 13px;
+          margin-top: 5px;
+
+          .icon {
+            color: $grayColor;
+            border-radius: 10px;
+            margin-right: 5px;
+          }
+        }
+        .genre {
+          margin-top: 10px;
+          span {
+            color: $grayColor;
+            font-size: 9px;
+            white-space: nowrap;
+            position: relative;
+            margin-right: 10px;
+          }
+        }
+        .media-type {
+          @include d-flex(start, center, row);
+          text-transform: uppercase;
+          color: $grayColor;
+          font-size: 12px;
+          margin-top: 5px;
+          .icon {
+            margin-right: 7px;
+          }
+        }
+        .original-lang {
+          margin-top: 5px;
+          border: 1px solid rgba($color: $grayColor, $alpha: 0.2);
+          width: fit-content;
+          padding: 3px;
+          color: $grayColor;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

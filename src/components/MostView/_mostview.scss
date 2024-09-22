@@ -1,0 +1,66 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.mostViewMovies {
+  margin: 50px 0;
+  position: relative;
+  padding: 0 15px;
+  .heading {
+    h3 {
+      color: var(--text-color);
+      margin: 20px 0;
+    }
+  }
+  .mostMovies {
+    position: relative;
+    @include responsive(small) {
+      &::before {
+        background-image: none;
+      }
+    }
+    .mostMovie {
+      position: relative;
+      &::before {
+        @include blur("bottom");
+        border-radius: 20px;
+      }
+      img {
+        width: 250px;
+        border-radius: 20px;
+      }
+      .details {
+        bottom: 20px;
+        z-index: 9;
+        position: absolute;
+        left: 15px;
+        h4 {
+          color: var(--text-color);
+        }
+        .rate {
+          @include d-flex(start, center, row);
+          color: var(--text-color);
+          font-size: 13px;
+          margin-top: 5px;
+          flex-wrap: wrap;
+          span {
+            color: var(--seconde-color);
+            font-size: 9px;
+            white-space: nowrap;
+            position: relative;
+            margin-left: 10px;
+            &::before {
+              content: "|";
+              position: absolute;
+              left: -5px;
+            }
+          }
+          .icon {
+            color: $goldColor;
+            border-radius: 10px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

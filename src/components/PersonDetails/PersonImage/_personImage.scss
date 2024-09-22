@@ -1,0 +1,81 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+.not-found{
+  color: var(--text-color);
+  margin-top: 10px;
+}
+.person-images {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  // columns: 3 250px;
+  div.image {
+    position: relative;
+    &::before {
+      @include blur(bottom);
+      border-radius: 10px;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
+    }
+    .other {
+      position: absolute;
+      bottom: 5px;
+      @include d-flex(space-between, center, row);
+      width: 100%;
+      z-index: 3;
+      padding: 10px;
+      p {
+        @include d-flex(center, center, row);
+        color: var(--text-color);
+        font-size: 15px;
+      }
+      a {
+        color: var(--seconde-color);
+      }
+      .like {
+        @include d-flex(start, center, row);
+        span {
+          color: var(--seconde-color);
+          display: block;
+          margin-left: 3px;
+        }
+        label {
+          input {
+            width: 0;
+            height: 0;
+          }
+          svg path {
+            transition: 100ms;
+            stroke: var(--text-color);
+            transform-origin: center;
+            stroke-width: 2px;
+          }
+          input:checked ~ svg path {
+            stroke-width: 0px;
+            color: red;
+            animation: like_effect 400ms ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes like_effect {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

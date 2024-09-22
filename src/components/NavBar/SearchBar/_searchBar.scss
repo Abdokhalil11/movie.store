@@ -1,0 +1,89 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+@use "./SearchBodyFormat/searchBodyFormat" as *;
+.search-bar {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  top: 0;
+  z-index: 9999;
+  &[data-show="false"] {
+    opacity: 0;
+    z-index: -99;
+  }
+  @include responsive(small) {
+    padding-left: 75px;
+  }
+
+  @include d-flex(center, center, row);
+  .search-content {
+    width: 560px;
+    background-color: #15172a;
+    @include responsive(small) {
+      width: calc(100% - 20px);
+    }
+    .search-input {
+      border: 2px solid var(--main-color);
+      position: relative;
+      @include d-flex(center, center, row);
+      border-radius: 5px;
+      padding: 5px;
+      margin: 10px 10px 0;
+      input {
+        border: none;
+        outline: none;
+        background-color: #000000;
+        height: 50px;
+        padding: 0 10px;
+        color: var(--text-color);
+        caret-color: var(--main-color);
+        flex: 1;
+        font-size: 20px;
+      }
+      .icon {
+        background-color: #000000;
+        color: var(--main-color);
+        height: 50px;
+      }
+    }
+    .search-body {
+      color: var(--seconde-color);
+      text-align: center;
+      padding: 10px 0;
+      min-height: 100px;
+      // @include d-flex(center, center, row);
+      // flex-direction: column;
+    }
+    .search-footer {
+      background-color: #1e2136;
+      padding: 10px;
+      @include d-flex(start, center, row);
+      border-radius: 0 0 5px 5px;
+      box-shadow:
+        inset 0 1px 0 0 rgba(73, 76, 106, 0.5),
+        0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+      .instruction {
+        @include d-flex(start, center, row);
+        .esc {
+          @include d-flex(center, center, row);
+          .icon {
+            @include d-flex(center, center, row);
+            background-color: #1a1d30;
+            color: var(--seconde-color);
+            font-size: 9px;
+            height: 15px;
+            width: 15px;
+            padding: 10px;
+            border-radius: 3px;
+          }
+          p {
+            color: var(--seconde-color);
+            margin-left: 5px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

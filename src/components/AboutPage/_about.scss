@@ -1,0 +1,281 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+$redColor: var(--main-color);
+.about {
+  background-color: black;
+  color: var(--text-color);
+  text-align: center;
+  h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    @include responsive(small) {
+      font-size: 20px;
+    }
+  }
+  .first {
+    height: 100vh;
+    position: relative;
+    .bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .character {
+      z-index: 2;
+    }
+    h2 {
+      z-index: 1;
+      color: var(--text-color);
+      font-size: 150px;
+      white-space: nowrap;
+      height: 500px;
+      font-weight: 900;
+      @include responsive(small) {
+        font-size: 70px;
+      }
+    }
+    img,
+    h2 {
+      @include center(both);
+    }
+  }
+  .tell-us {
+    p {
+      margin-top: 10px;
+      font-size: 20px;
+      line-height: 1.3;
+      max-width: 800px;
+      margin: 10px auto;
+      color: var(--seconde-color);
+      @include responsive(small) {
+        font-size: 14px;
+      }
+      span {
+        border-bottom: 2px dashed $redColor;
+      }
+    }
+  }
+  .advantages {
+    margin-top: 20px;
+
+    .advantage {
+      max-width: 800px;
+      margin: auto;
+
+      p {
+        text-align: left;
+        margin-bottom: 7px;
+        color: var(--seconde-color);
+        font-size: 17px;
+        @include d-flex(start, center, row);
+        counter-increment: name;
+        @include responsive(small) {
+          font-size: 14px;
+        }
+        &::before {
+          content: counter(name);
+          @include circle(50px);
+          margin-right: 5px;
+          min-width: 50px;
+          font-size: 17px;
+          color: var(--text-color);
+          @include d-flex(center, center, row);
+          border-bottom: 3px solid $redColor;
+        }
+      }
+    }
+  }
+  .testimonials {
+    margin-top: 20px;
+    & > div {
+      &.two {
+        margin-top: 15px;
+        .wrapper {
+          .carsouel {
+            position: relative;
+            @include responsive(small) {
+              left: 0;
+            }
+            left: -65px;
+          }
+        }
+      }
+      .testimonial {
+        min-width: 300px;
+        height: 250px;
+        padding: 10px;
+        background: var(--background-color);
+        color: var(--seconde-color);
+        user-select: none;
+        border-radius: 10px;
+        @include d-flex(start, start, column);
+        & > svg {
+          display: block;
+          width: 50px;
+          height: 50px;
+          color: var(--main-color);
+          margin-bottom: 5px;
+        }
+        .body {
+          text-align: justify;
+          margin-bottom: 5px;
+          max-height: 99px;
+          overflow: hidden;
+        }
+        .footer {
+          margin-top: auto;
+          @include d-flex(start, center, row);
+          .image {
+            @include circle(40px);
+            min-width: 40px;
+            background-color: black;
+            @include d-flex(center, center, row);
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          .info {
+            margin-left: 10px;
+            p,
+            a {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              max-width: 200px;
+              overflow: hidden;
+              text-align: left;
+              font-size: 14px;
+            }
+            a {
+              color: var(--main-color);
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .states {
+    margin-top: 20px;
+    .state-group {
+      margin-top: 40px;
+      position: relative;
+      height: 500px;
+      .image {
+        position: absolute;
+        @include center(both);
+        &::before {
+          content: "";
+          width: 100%;
+          height: 50%;
+          border-radius: 175px 175px 0 0;
+          position: absolute;
+          left: 0;
+          border: 2px solid var(--seconde-color);
+          border-bottom: 0;
+        }
+        img {
+          @include circle(350px);
+          @include responsive(small) {
+            @include circle(200px);
+          }
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+      .stats-cricle {
+        @include circle(500px);
+        @include responsive(small) {
+          @include circle(250px);
+        }
+        position: absolute;
+        @include center(left);
+        top: 0;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 50%;
+          border-radius: 250px 250px 0 0;
+          position: absolute;
+          left: 0;
+          border: 2px solid var(--seconde-color);
+          border-bottom: 0;
+        }
+        .state {
+          width: 10px;
+          background-color: transparent;
+          height: 100%;
+          @include center(both);
+          transform-origin: center;
+          animation: move 2s 1;
+
+          div {
+            transform: translateX(-50%);
+            left: 50%;
+            position: absolute;
+            top: -35px;
+            background-color: #000;
+            padding: 10px;
+            @include d-flex(center, start, column);
+            p {
+              font-size: 40px;
+              letter-spacing: 2px;
+              position: relative;
+              font-family: "Barlow", sans-serif;
+              @include responsive(small) {
+                font-size: 20px;
+              }
+              &::before {
+                content: "+";
+                position: absolute;
+                right: -15px;
+                bottom: 0;
+                font-size: 20px;
+                color: var(--seconde-color);
+              }
+            }
+            span {
+              font-size: 12px;
+              color: var(--seconde-color);
+              white-space: nowrap;
+              font-family: "Barlow", sans-serif;
+            }
+          }
+          &:first-child {
+            transform: translate(-50%, -50%) rotate(90deg);
+            div {
+              &:last-child {
+                top: calc(100% - 35px);
+              }
+              position: absolute;
+
+              left: 50%;
+              transform: translateX(-50%) rotate(-90deg);
+            }
+          }
+          &:nth-child(2) {
+            transform: translate(-50%, -50%) rotate(-45deg);
+            div {
+              @include center(left);
+              transform: translateX(-50%) rotate(45deg);
+            }
+          }
+          &:nth-child(3) {
+            transform: translate(-50%, -50%) rotate(45deg);
+            div {
+              @include center(left);
+              transform: translateX(-50%) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+}

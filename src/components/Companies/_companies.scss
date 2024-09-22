@@ -1,0 +1,36 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.companies {
+  margin: 50px 0;
+  position: relative;
+  padding-left: 20px;
+  & .heading {
+    h3 {
+      color: var(--text-color);
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+  .wrapper {
+    .carsouel {
+      align-items: center;
+      div {
+        background-color: $blackColor;
+        padding: 10px 20px;
+        border-radius: 20px;
+        @include d-flex(center, center, row);
+        margin-right: 30px;
+        @include responsive(small) {
+          margin-right: 0;
+        }
+      }
+      img {
+        filter: invert(1);
+        height: 90px;
+        object-fit: contain;
+        width: 200px;
+      }
+    }
+  }
+}

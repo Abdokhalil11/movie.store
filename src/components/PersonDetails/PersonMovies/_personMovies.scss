@@ -1,0 +1,67 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+
+.person-movies {
+  margin-top: 15px;
+  .person-movie {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    a {
+      position: relative;
+      display: block;
+      &::before {
+        @include blur("bottom");
+        border-radius: 20px;
+      }
+      img,
+      .img {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+      .img {
+        height: 379px;
+        @include d-flex(center, center, row);
+
+        svg {
+          color: var(--text-color);
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .details {
+        bottom: 20px;
+        z-index: 9;
+        position: absolute;
+        left: 15px;
+        h4 {
+          color: var(--text-color);
+        }
+        .rate {
+          @include d-flex(start, center, row);
+          color: var(--text-color);
+          font-size: 13px;
+          margin-top: 5px;
+          flex-wrap: wrap;
+          span {
+            color: var(--seconde-color);
+            font-size: 9px;
+            white-space: nowrap;
+            position: relative;
+            margin-left: 10px;
+            &::before {
+              content: "|";
+              position: absolute;
+              left: -5px;
+            }
+          }
+          .icon {
+            color: $goldColor;
+            border-radius: 10px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

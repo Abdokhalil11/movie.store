@@ -1,0 +1,67 @@
+.wrapper {
+  position: relative;
+  max-width: 1200px;
+  user-select: none;
+}
+
+.wrapper .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #333;
+  cursor: pointer;
+  z-index: 9;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width:767px) {
+
+  .wrapper .arrow {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.wrapper .arrow.left {
+  left: 0;
+}
+
+.wrapper .arrow.right {
+  right: 0;
+}
+
+.wrapper .carsouel {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  align-items: flex-start;
+  gap: 15px;
+  -webkit-mask: linear-gradient(90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent);
+  mask: linear-gradient(90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent);
+}
+
+
+.wrapper .carsouel .movie {
+  margin-right: 15px;
+}
+
+.wrapper .carsouel .movie p {
+  font-size: 14px;
+  color: white;
+}
+
+.wrapper .carsouel .movie img {
+  width: 250px;
+}

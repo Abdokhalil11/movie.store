@@ -1,0 +1,220 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+@keyframes opc {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+    left: 20px;
+  }
+  100% {
+    opacity: 100%;
+    left: 0px;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.tailer {
+  position: relative;
+  min-height: 650px;
+  &::before {
+    @include blur("bottom");
+  }
+
+  .tailer-background {
+    position: relative;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      animation: opc 1s 1;
+      @include responsive("medium") {
+        border-radius: 0 0 20px 20px;
+        min-height: 100vh;
+      }
+      position: relative;
+    }
+    .tailer-info {
+      position: absolute;
+      bottom: 50px;
+      padding: 0 15px;
+      animation: ani 1s 1;
+      z-index: 3;
+      width: 50%;
+      @include responsive("medium") {
+        width: 100%;
+        bottom: 0;
+        margin: 20px 0;
+      }
+      h3 {
+        color: var(--text-color);
+        font-size: 50px;
+        border-left: 5px solid var(--text-color);
+        padding-left: 5px;
+        @include responsive("medium") {
+          font-size: 25px;
+          margin: 10px 0;
+        }
+      }
+      .date {
+        color: var(--seconde-color);
+        font-size: 13px;
+        margin: 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        span {
+          margin-left: 10px;
+          position: relative;
+          @include responsive(medium) {
+            font-size: 12px;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            @include center(top);
+            @include circle(3px);
+            left: -6px;
+            background-color: var(--seconde-color);
+          }
+        }
+      }
+      p {
+        color: var(--seconde-color);
+        margin-top: 20px;
+        font-size: 12px;
+      }
+      .action {
+        margin: 10px auto;
+        display: flex;
+        @include responsive("medium") {
+          justify-content: space-between;
+        }
+        button,
+        a {
+          width: 150px;
+          height: 45px;
+          border-radius: 10px;
+          margin-right: 20px;
+          @include d-flex(center, center, row);
+          color: var(--text-color);
+          cursor: pointer;
+          span {
+            margin-left: 10px;
+            @include responsive(medium) {
+              margin-left: 3px;
+            }
+          }
+          @include responsive(medium) {
+            width: calc(50% - 10px);
+            margin-right: 0;
+            font-size: 14px;
+          }
+        }
+        button {
+          border: 1px solid var(--text-color);
+          background-color: transparent;
+        }
+        a {
+          background-color: var(--main-color);
+          border: none;
+        }
+      }
+    }
+  }
+
+  .tailerMovies {
+    max-width: 50%;
+    position: absolute;
+    bottom: 10px;
+    z-index: 3;
+    overflow: hidden;
+    right: 10px;
+
+    @include responsive("medium") {
+      position: relative;
+      bottom: 0;
+      max-width: 100%;
+      padding-left: 10px;
+      right: 0px;
+      &::before {
+        background-image: none;
+      }
+    }
+    .tailer-movie {
+      position: relative;
+      margin-right: 10px;
+      &::before {
+        @include blur(bottom);
+        // height: 30%;
+      }
+      img {
+        width: 180px;
+        border-radius: 5px;
+        &.active {
+          border: 2px solid var(--main-color);
+        }
+        @include responsive("medium") {
+          width: 150px;
+        }
+      }
+      .detail {
+        bottom: 30px;
+        z-index: 9;
+        position: absolute;
+        padding: 0 15px;
+        max-width: 100%;
+        h4 {
+          color: var(--text-color);
+          font-size: 12px;
+        }
+        .rate {
+          @include d-flex(start, center, row);
+          color: var(--text-color);
+          font-size: 10px;
+          margin-top: 5px;
+          span {
+            color: var(--seconde-color);
+            font-size: 9px;
+            position: relative;
+            margin-left: 10px;
+            &::before {
+              content: "|";
+              position: absolute;
+              left: -5px;
+            }
+          }
+          .icon {
+            color: $goldColor;
+            border-radius: 10px;
+            margin-right: 5px;
+            min-width: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @keyframes slideToTop {
+//   0% {
+//     top: 0;
+//   }
+//   100% {
+//     top: -100%;
+//   }
+// }

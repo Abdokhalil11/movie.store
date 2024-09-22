@@ -1,0 +1,68 @@
+@use "../components/NavBar/navbar" as *;
+@use "../components/Tailer/tailer" as *;
+@use "../components/LastAdd/lastAdd" as *;
+@use "../components/MostView/mostview" as *;
+@use "../components/TVSeries/tvseries" as *;
+@use "../components/TVSeries/tvseries" as *;
+@use "../components/Companies/companies" as *;
+@use "../components/Recommend/recommend" as *;
+@use "../components/LoginPage/login" as *;
+@use "../components/SignPage/sign" as *;
+@use "../components/MovieDetails/movieDetails" as *;
+@use "../components/Trending/trending" as *;
+@use "../components/Persons/persons" as *;
+@use "../components/Footer/footer" as *;
+@use "../components/PersonDetails/personDetails" as *;
+@use "../components/PersonDetails/PersonAbout/personAbout" as *;
+@use "../components/PersonDetails/PersonImage/personImage" as *;
+@use "../components/PersonDetails/PersonMovies/personMovies" as *;
+@use "../components/PersonDetails/PersonTvSeries/personTvSeries" as *;
+@use "../components/SearchDetails/searchDetails" as *;
+@use "../components/DiscoverLists/discover" as *;
+@use "../components/Categries/categries" as *;
+@use "../components/AboutPage/about" as *;
+@use "../components/InfiniteLoading/loader" as *;
+@use "../components/Contact Us/contact" as *;
+@use "../components/Settings/settings" as *;
+@use "../components/HeroSection/hero" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@100;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --main-color: #{$mainColor};
+  --background-color: #{$darkColor};
+  --text-color: #{$whiteColor};
+  --seconde-color: #{$grayColor};
+}
+
+[theme="light"] {
+  --main-color: #{$mainColor};
+  --background-color: #{$whiteColor};
+  --text-color: #{$darkColor};
+  --seconde-color: #{$grayColor};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  transition: 0.4s;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+.content {
+  padding-left: 75px;
+  overflow: hidden;
+}

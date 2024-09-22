@@ -1,0 +1,72 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+
+.loading {
+  position: relative;
+  @include loadingAni("dark");
+  .loading-background {
+    .img {
+      max-width: 100%;
+      @include loadingAni("dark");
+      height: 650px;
+      @include responsive(medium) {
+        @include loadingAni("light");
+        height: 200px;
+        border-radius: 0 0 20px 20px;
+      }
+    }
+    .details {
+      position: absolute;
+      padding: 0 15px;
+      bottom: 20px;
+      @include responsive(medium) {
+        position: relative;
+        bottom: 0;
+        margin: 20px 0;
+      }
+      .text {
+        width: 250px;
+        height: 50px;
+        border-radius: 2px;
+        @include loadingAni(light);
+        @include responsive(small) {
+          width: 100%;
+        }
+      }
+      .descripition {
+        width: 300px;
+        height: 200px;
+        @include loadingAni(light);
+        margin: 10px 0;
+        border-radius: 5px;
+        @include responsive("small") {
+          height: 100px;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .loading-movies {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    max-width: 50%;
+    overflow: hidden;
+    right: 0;
+    @include responsive(medium) {
+      position: relative;
+      max-width: 100%;
+    }
+    .loading-movie {
+      min-width: 180px;
+      height: 240px;
+      margin-right: 10px;
+      border-radius: 5px;
+      @include loadingAni("light");
+      @include responsive(medium) {
+        min-width: calc(180px / 2);
+        height: calc(240px / 2);
+      }
+    }
+  }
+}

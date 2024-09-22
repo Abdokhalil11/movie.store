@@ -1,0 +1,100 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+
+.tailer-loading {
+  position: relative;
+  .image {
+    max-width: 100%;
+    min-height: 670px;
+    @include loadingAni(dark);
+    @include responsive(medium) {
+      min-height: 100vh;
+    }
+  }
+  .details {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    .title {
+      width: 240px;
+      height: 50px;
+      @include loadingAni(light);
+      border-radius: 3px;
+    }
+    .description {
+      width: 500px;
+      height: 120px;
+      @include loadingAni(light);
+      border-radius: 3px;
+    }
+    .button {
+      width: 150px;
+      height: 50px;
+      @include loadingAni(light);
+      margin-top: 10px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.video-loading {
+  margin: 50px 0;
+  .types-loading {
+    @include d-flex(center, center, row);
+    div {
+      width: 120px;
+      height: 30px;
+      border-radius: 10px;
+      @include loadingAni(dark);
+      margin: 0 10px;
+    }
+  }
+  .player-loading {
+    margin-top: 20px;
+    .carsouel {
+      div {
+        min-width: 350px;
+        height: 250px;
+        @include loadingAni(dark);
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.gallery-loading {
+  .carsouel {
+    div {
+      min-width: 300px;
+      height: 195px;
+      border-radius: 20px;
+      @include loadingAni(dark);
+    }
+  }
+}
+
+.reviwe-loading {
+  width: calc(100% - 400px);
+  margin: 50px auto;
+  @include responsive(medium) {
+    width: 100%;
+  }
+  div {
+    height: 200px;
+    border-radius: 20px;
+    margin: 10px 0;
+    @include loadingAni(dark);
+  }
+}
+
+.similar-loading {
+  margin-top: 50px;
+  .carsouel {
+    div {
+      min-width: 250px;
+      height: 375px;
+      @include loadingAni(dark);
+      border-radius: 20px;
+    }
+  }
+}

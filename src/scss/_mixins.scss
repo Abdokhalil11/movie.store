@@ -1,0 +1,96 @@
+@use "./variables" as *;
+@mixin d-flex($justify, $align, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin shadow {
+  filter: drop-shadow(2px 4px 6px $blackColor);
+}
+
+@mixin circle($d) {
+  width: $d;
+  height: $d;
+  border-radius: 50%;
+}
+
+@mixin tooltip($postion, $content) {
+  content: $content;
+  border-width: 10px;
+  border-style: solid;
+}
+
+@mixin center($state) {
+  position: absolute;
+
+  @if ($state==left) {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if ($state==top) {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin loadingAni($theme) {
+  @if ($theme == "dark") {
+    background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  } @else {
+    background: linear-gradient(
+      120deg,
+      #e5e5e5 30%,
+      #f2f2f2 38%,
+      #f2f2f2 40%,
+      #e5e5e5 48%
+    );
+  }
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+@keyframes load {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@mixin responsive($size) {
+  @if ($size== "small") {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if ($size== "medium") {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+  @if ($size== "large") {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin blur($pos) {
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to top, $blackColor 10%, transparent);
+  content: "";
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+}
+
+@mixin gridLayout($min, $max, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, $max));
+  gap: $gap;
+}

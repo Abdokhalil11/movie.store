@@ -1,0 +1,146 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.trending-movies {
+  margin-top: 50px;
+  padding-left: 20px;
+  position: relative;
+
+  .heading {
+    h3 {
+      color: $whiteColor;
+      margin: 20px 0;
+      text-align: center;
+      font-size: 25px;
+    }
+  }
+  .toggle {
+    @include d-flex(start, center, row);
+    position: relative;
+    width: fit-content;
+    margin: 10px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    input {
+      width: 80px;
+      height: 35px;
+      appearance: none;
+      background-color: $blackColor;
+      position: relative;
+      &::before {
+        color: $whiteColor;
+        text-align: center;
+        line-height: 35px;
+        display: block;
+        z-index: 3;
+        position: relative;
+      }
+      &[value="day"] {
+        &::before {
+          content: "Day";
+        }
+      }
+      &[value="week"] {
+        &::before {
+          content: "Week";
+        }
+      }
+      &:checked + span {
+        left: calc(100% - 80px);
+      }
+    }
+    span {
+      @include center(top);
+      left: 5px;
+      background-color: $mainColor;
+      width: 75px;
+      height: calc(100% - 10px);
+      border-radius: 10px;
+    }
+  }
+
+  .wrapper {
+    .trending-movie {
+      display: flex;
+      counter-increment: counter;
+      margin-right: 10px;
+      border-radius: 10px;
+      &::before {
+        content: counter(counter);
+        font-size: 50px;
+        color: $whiteColor;
+        @include d-flex(center, center, row);
+        position: relative;
+        margin-right: 20px;
+        @include responsive(small) {
+          font-size: 25px;
+        }
+      }
+      .image {
+        min-width: 150px;
+        @include responsive(small) {
+          min-width: 100px;
+        }
+        img {
+          max-width: 100%;
+          border-radius: 20px 0 0 20px;
+        }
+      }
+      .details {
+        @include d-flex(end, start, column);
+
+        padding: 10px;
+        border-radius: 0 20px 20px 0;
+        background-color: $blackColor;
+        h4 {
+          color: $whiteColor;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 110px;
+        }
+        .rate {
+          margin-top: 10px;
+          @include d-flex(start, center, row);
+          color: $whiteColor;
+          font-size: 13px;
+          margin-top: 5px;
+
+          .icon {
+            color: $goldColor;
+            border-radius: 10px;
+            margin-right: 5px;
+          }
+        }
+        .genre {
+          margin-top: 10px;
+          span {
+            color: $grayColor;
+            font-size: 9px;
+            white-space: nowrap;
+            position: relative;
+            margin-right: 10px;
+          }
+        }
+        .media-type {
+          @include d-flex(start, center, row);
+          text-transform: uppercase;
+          color: $grayColor;
+          font-size: 12px;
+          margin-top: 5px;
+          .icon {
+            margin-right: 7px;
+          }
+        }
+        .original-lang {
+          margin-top: 5px;
+          border: 1px solid rgba($color: $grayColor, $alpha: 0.2);
+          width: fit-content;
+          padding: 3px;
+          color: $grayColor;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

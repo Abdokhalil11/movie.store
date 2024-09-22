@@ -1,0 +1,260 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+@keyframes slide {
+  to {
+    left: -300px;
+  }
+}
+input {
+  border: none;
+  background-color: transparent;
+}
+
+.login {
+  @include d-flex(space-between, "", row-reverse);
+  position: relative;
+  @include responsive("small") {
+    flex-direction: column-reverse;
+  }
+  .background-login {
+    position: relative;
+    background-color: #000000;
+    max-width: 50%;
+    max-height: 100vh;
+    overflow: hidden;
+    @include responsive("small") {
+      max-width: 100%;
+    }
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba($color: #000000, $alpha: 0.7);
+      z-index: 1;
+    }
+    div {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      left: 0;
+      gap: 10px;
+      margin-bottom: 10px;
+      animation: slide 10s infinite linear alternate;
+      &:nth-child(2) {
+        left: -100px;
+      }
+      img {
+        min-width: 250px;
+        @include responsive(small) {
+          min-width: 150px;
+        }
+        object-fit: cover;
+      }
+    }
+  }
+  form {
+    z-index: 2;
+    background-color: #1a1a1a;
+    backdrop-filter: blur(20px);
+    padding: 10px 15px;
+    flex: 1;
+    @include d-flex(center, center, column);
+
+    .heading {
+      width: 75%;
+      margin-bottom: 20px;
+      h1 {
+        color: $whiteColor;
+        margin: 20px 0;
+      }
+      p {
+        color: $grayColor;
+        font-size: 14px;
+        text-align: justify;
+      }
+    }
+    .login-with {
+      width: 50%;
+      @include responsive("medium") {
+        width: fit-content;
+      }
+      @include responsive("small") {
+        width: fit-content;
+      }
+      .title {
+        &::before {
+          width: 300px;
+        }
+      }
+      div {
+        background-color: $whiteColor;
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 10px;
+        margin: 15px 0;
+        overflow: hidden;
+        position: relative;
+        &::before {
+          content: "Comming Soon";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          background-color: rgba($color: #000000, $alpha: 0.7);
+          color: rgba($color: $whiteColor, $alpha: 0.8);
+          text-align: center;
+          font-size: 10px;
+          line-height: 45px;
+        }
+        @include d-flex(space-between, center, row);
+        img {
+          max-width: 20px;
+          @include responsive("small") {
+            margin-right: 20px;
+          }
+        }
+        p {
+          font-weight: 500;
+        }
+      }
+    }
+    .title {
+      color: rgba($color: $whiteColor, $alpha: 0.5);
+      position: relative;
+      margin: 15px auto;
+      font-size: 12px;
+      text-transform: capitalize;
+      background-color: #1a1a1a;
+      padding: 0 10px;
+      width: fit-content;
+      &::before {
+        content: "";
+        width: 450px;
+        @include responsive(small) {
+          width: 250px;
+        }
+        @include responsive(medium) {
+          width: 270px;
+        }
+        height: 1px;
+        @include center(both);
+        background-color: rgba($color: $whiteColor, $alpha: 0.3);
+        z-index: -1;
+      }
+    }
+    .name {
+      @include d-flex(space-between, center, row);
+      width: 75%;
+      label {
+        width: calc(50% - 5px);
+        position: relative;
+        span {
+          position: absolute;
+          top: 5px;
+          color: $grayColor;
+          left: 10px;
+          font-size: 12px;
+          cursor: text;
+          transition: 0.4s ease;
+        }
+        input {
+          width: 100%;
+          background-color: #333333;
+          padding: 20px 05px 05px 10px;
+          border-radius: 10px;
+          color: #fff;
+          &:placeholder-shown + span {
+            top: 12.5px;
+            font-size: 15px;
+          }
+          &:focus + span {
+            font-size: 12px;
+            top: 5px;
+            transform: translateY(0);
+            color: $mainColor;
+          }
+        }
+      }
+    }
+    .email {
+      margin-top: 10px;
+      @extend .name;
+      display: flex;
+      label {
+        display: block;
+        width: 100%;
+        input {
+          border-radius: 10px 0 0 10px;
+        }
+      }
+      div.icon {
+        width: 40px;
+        height: 45px;
+        background: $whiteColor;
+        border-radius: 0 10px 10px 0;
+        @include d-flex(center, center, row);
+        .hide {
+          display: none;
+        }
+      }
+    }
+    .password {
+      @extend .email;
+      label:has(input[type="text"]) + .icon {
+        .show {
+          display: none;
+        }
+        .hide {
+          display: block;
+        }
+      }
+    }
+    .confirm-password {
+      @extend .password;
+    }
+    input[type="submit"] {
+      width: 75%;
+      padding: 10px;
+      border-radius: 10px;
+      color: $whiteColor;
+      background-color: $mainColor;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .toSign {
+      color: $grayColor;
+      font-size: 13px;
+      margin-top: 10px;
+      a {
+        margin-left: 3px;
+      }
+    }
+  }
+  .massege {
+    @include d-flex(space-between, center, row);
+    background-color: $darkColor;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    position: absolute;
+    top: -100%;
+    @include center(left);
+    color: white;
+    z-index: 2;
+    padding: 10px 15px;
+    border: 2px solid tomato;
+    transition: 0.3s ease;
+    .icon {
+      color: tomato;
+    }
+    span {
+      font-size: 13px;
+    }
+    &.active {
+      top: 10px;
+    }
+  }
+}

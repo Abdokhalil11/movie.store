@@ -1,0 +1,26 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.categries {
+  @include gridLayout(300px, 1fr, 10px);
+  .categrie {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      @include blur(bottom);
+    }
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+    span {
+      @include center(both);
+      color: var(--text-color);
+      z-index: 9;
+      font-size: 17px;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,211 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.person-details {
+  .container {
+    margin: 0 auto;
+    padding: 0 40px;
+    @include responsive(small) {
+      padding: 0 0;
+    }
+    @include responsive(small) {
+      max-width: 750px;
+    }
+    @include responsive(medium) {
+      max-width: 970px;
+    }
+    @include responsive(large) {
+      max-width: 1120px;
+    }
+    .person-content {
+      .image-poster {
+        margin: 20px 0;
+        @include responsive(small) {
+          margin: 0 0 20px;
+        }
+        img,
+        .img {
+          height: 200px;
+          width: 100%;
+          object-fit: cover;
+          object-position: bottom;
+          border-radius: 10px;
+          filter: blur(10px) grayscale(1);
+        }
+        .img {
+          @include d-flex(center, center, row);
+          color: white;
+          background-color: black;
+          filter: none;
+          svg {
+            width: 100px;
+            height: 100px;
+            @include responsive(small) {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
+      .person-info {
+        @include d-flex(start, center, row);
+        @include responsive(small) {
+          flex-direction: column;
+        }
+        .person-image {
+          img,
+          .img {
+            @include circle(200px);
+            object-fit: cover;
+            object-position: top;
+          }
+          .img {
+            @include d-flex(center, center, row);
+            color: white;
+            background-color: black;
+            svg {
+              width: 100px;
+              height: 100px;
+            }
+          }
+        }
+        .details {
+          margin-left: 15px;
+          @include responsive(small) {
+            margin-left: 0px;
+          }
+          h4 {
+            font-size: 30px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            @include responsive(small) {
+              font-size: 20px;
+              text-align: center;
+              margin: 10px 0;
+            }
+          }
+          .info {
+            @include d-flex(start, center, row);
+            color: var(--seconde-color);
+            .popularity {
+              @include d-flex(start, center, row);
+              font-size: 22px;
+            }
+            .role {
+              font-size: 17px;
+            }
+            .gender {
+              font-size: 14px;
+            }
+            .sparator {
+              @include circle(5px);
+              background-color: var(--seconde-color);
+              margin: 0 7px;
+            }
+          }
+          .links {
+            @include d-flex(start, center, row);
+            margin: 7px 0;
+            @include responsive(small) {
+              justify-content: center;
+            }
+            a {
+              width: 50px;
+              height: 50px;
+              @include d-flex(center, center, row);
+              margin-right: 5px;
+              background-color: black;
+              border-radius: 25px;
+              svg {
+                width: 30px;
+                height: 30px;
+                color: var(--main-color);
+              }
+              img {
+                max-width: 100%;
+              }
+            }
+          }
+          button {
+            position: relative;
+            @include responsive(small) {
+              margin: auto;
+            }
+            &::before {
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+            &.active {
+              background-color: var(--main-color);
+              border: none;
+            }
+            width: 150px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid var(--text-color);
+            margin: 10px 0;
+            border-radius: 50px;
+            @include d-flex(center, center, row);
+            font-size: 17px;
+            user-select: none;
+            color: var(--text-color);
+            svg {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    .toggle {
+      margin-top: 50px;
+      @include d-flex(start, center, row);
+      position: relative;
+      @include responsive(small) {
+        justify-content: center;
+      }
+      a {
+        display: block;
+        margin-right: 10px;
+        color: var(--text-color);
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        border-bottom: 0px solid var(--text-color);
+        position: relative;
+        @include responsive(small) {
+          font-size: 14px;
+          margin-right: 0px;
+        }
+        &::before {
+          content: "";
+          width: 0%;
+          height: 2px;
+          background-color: var(--text-color);
+          position: absolute;
+          bottom: -3px;
+          @include center(left);
+          transition: 0.3s;
+        }
+        &.active::before {
+          width: calc(100% - 5px);
+        }
+      }
+      .tricker {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--seconde-color);
+        bottom: -5px;
+        @include responsive(small) {
+          width: calc(100% - 20px);
+          @include center(left);
+        }
+      }
+    }
+  }
+}

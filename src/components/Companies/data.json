@@ -1,0 +1,114 @@
+[
+  {
+    "description": "",
+    "headquarters": "San Francisco, California",
+    "homepage": "https://www.lucasfilm.com",
+    "id": 1,
+    "logo_path": "/tlVSws0RvvtPBwViUyOFAO0vcQS.png",
+    "name": "Lucasfilm Ltd.",
+    "origin_country": "US",
+    "parent_company": null
+  },
+  {
+    "description": "",
+    "headquarters": "Burbank, California",
+    "homepage": "https://movies.disney.com",
+    "id": 2,
+    "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+    "name": "Walt Disney Pictures",
+    "origin_country": "US",
+    "parent_company": null
+  },
+  {
+    "description": "",
+    "headquarters": "Emeryville, California",
+    "homepage": "http://www.pixar.com",
+    "id": 3,
+    "logo_path": "/bqGuVkQKYSGixzO9YA6q8PCIWjT.png",
+    "name": "Pixar",
+    "origin_country": "US",
+    "parent_company": {
+      "name": "Walt Disney Pictures",
+      "id": 2,
+      "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png"
+    }
+  },
+  {
+    "description": "",
+    "headquarters": "Hollywood, California",
+    "homepage": "https://www.paramountpictures.com",
+    "id": 4,
+    "logo_path": "/gz66EfNoYPqHTYI4q9UEN4CbHRc.png",
+    "name": "Paramount",
+    "origin_country": "US",
+    "parent_company": {
+      "name": "Viacom International",
+      "id": 5308,
+      "logo_path": null
+    }
+  },
+  {
+    "description": "Columbia Pictures Industries, Inc. (CPII) is an American film production and distribution company. Columbia Pictures now forms part of the Columbia TriStar Motion Picture Group, owned by Sony Pictures Entertainment, a subsidiary of the Japanese conglomerate Sony. It is one of the leading film companies in the world, a member of the so-called Big Six. It was one of the so-called Little Three among the eight major film studios of Hollywood's Golden Age.",
+    "headquarters": "Culver City, California",
+    "homepage": "http://www.sonypictures.com",
+    "id": 5,
+    "logo_path": "/71BqEFAF4V3qjjMPCpLuyJFB9A.png",
+    "name": "Columbia Pictures",
+    "origin_country": "US",
+    "parent_company": null
+  },
+  {
+    "description": "",
+    "headquarters": "New York City",
+    "homepage": "",
+    "id": 6,
+    "logo_path": "/n53F7K9scQWFXYbrCablqLKqJdp.png",
+    "name": "RKO Radio Pictures",
+    "origin_country": "US",
+    "parent_company": null
+  },
+  {
+    "description": "",
+    "headquarters": "Universal City, California",
+    "homepage": "http://dreamworkspictures.com",
+    "id": 7,
+    "logo_path": "/1kqoutvio9eDaQpp0l4gQoEF4Yf.png",
+    "name": "DreamWorks Pictures",
+    "origin_country": "US",
+    "parent_company": null
+  },
+  {
+    "description": "",
+    "headquarters": "",
+    "homepage": "",
+    "id": 8,
+    "logo_path": "/78ilmDNTpdCfsakrsLqmAUkFTrO.png",
+    "name": "Fine Line Features",
+    "origin_country": "US",
+    "parent_company": {
+      "name": "New Line Cinema",
+      "id": 12,
+      "logo_path": "/iaYpEp3LQmb8AfAtmTvpqd4149c.png"
+    }
+  },
+  {
+    "description": "",
+    "headquarters": "Neuilly sur Seine",
+    "homepage": "http://www.gaumont.fr",
+    "id": 9,
+    "logo_path": "/nda3dTUYdDrJ6rZqBpYvY865aDv.png",
+    "name": "Gaumont",
+    "origin_country": "FR",
+    "parent_company": null
+  },
+  {
+    "description": "",
+    "headquarters": "Wellington",
+    "homepage": "",
+    "id": 11,
+    "logo_path": "/6FAuASQHybRkZUk08p9PzSs9ezM.png",
+    "name": "WingNut Films",
+    "origin_country": "NZ",
+    "parent_company": null
+  }
+]

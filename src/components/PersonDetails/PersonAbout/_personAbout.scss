@@ -1,0 +1,101 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+
+.person-about {
+  margin-top: 30px;
+  @include d-flex(start, start, row);
+  position: relative;
+  @include responsive(small) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .separator {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--seconde-color);
+    left: calc(25% - 2px);
+    @include d-flex(center, center, row);
+    @include responsive(small) {
+      display: none;
+    }
+  }
+  aside {
+    min-width: 25%;
+    margin-right: 10px;
+    @include responsive(small) {
+      min-width: 100%;
+      border-right: none;
+      border-bottom: 1px solid var(--seconde-color);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      margin-right: 0;
+      text-align: center;
+    }
+    @include responsive(medium){
+      padding: 0 10px;
+    }
+    h4 {
+      font-size: 20px;
+      color: var(--text-color);
+    }
+    div {
+      margin-top: 15px;
+      padding-left: 15px;
+      @include responsive(small) {
+        padding-left: 0;
+      }
+      h5 {
+        font-size: 17px;
+        color: var(--text-color);
+      }
+      p {
+        font-size: 15px;
+        margin-top: 4px;
+        color: var(--seconde-color);
+      }
+      &.brithday {
+        span {
+          color: var(--seconde-color);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .biograph {
+    h5 {
+      font-size: 17px;
+      color: var(--text-color);
+      margin-bottom: 15px;
+      @include responsive(small) {
+        text-align: center;
+      }
+    }
+    p {
+      color: var(--text-color);
+      opacity: 0.8;
+      font-size: 17px;
+      text-align: justify;
+      position: relative;
+      padding: 10px;
+      overflow: hidden;
+      @include responsive(small) {
+        text-align: center;
+      }
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        cursor: pointer;
+        &:hover {
+          color: var(--main-color);
+        }
+      }
+    }
+    @include responsive(small) {
+      font-size: 14px;
+      // text-align: center;
+      padding: 0 10px;
+    }
+  }
+}

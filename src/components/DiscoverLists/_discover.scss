@@ -1,0 +1,95 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.discovers {
+  @include gridLayout(250px, 1fr, 10px);
+  position: relative;
+  min-height: 100vh;
+  padding: 0 20px;
+  .discover {
+    position: relative;
+    height: fit-content;
+    &::before {
+      @include blur("bottom");
+      border-radius: 20px;
+    }
+    .image {
+      img {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+      .img {
+        color: white;
+        @include d-flex(center, center, row);
+        min-height: 378px;
+        background-color: black;
+        border-radius: 20px;
+      }
+    }
+    .details {
+      bottom: 20px;
+      z-index: 9;
+      position: absolute;
+      left: 15px;
+      h4 {
+        color: var(--text-color);
+      }
+      .rate {
+        @include d-flex(start, center, row);
+        color: var(--text-color);
+        font-size: 13px;
+        margin-top: 5px;
+        flex-wrap: wrap;
+        span {
+          color: var(--seconde-color);
+          font-size: 9px;
+          white-space: nowrap;
+          position: relative;
+          margin-left: 10px;
+          &::before {
+            content: "|";
+            position: absolute;
+            left: -5px;
+          }
+        }
+        .icon {
+          color: $goldColor;
+          border-radius: 10px;
+          margin-right: 5px;
+        }
+      }
+      .separator {
+        width: 2px;
+        background-color: var(--seconde-color);
+        height: 10px;
+        margin: 0 5px;
+      }
+      .gender {
+        color: var(--seconde-color);
+      }
+    }
+  }
+}
+
+
+.navBar {
+  @include d-flex(space-between, center, row);
+  background-image: linear-gradient(to right, #353535, #434242);
+  bottom: 50px;
+  @include center(left);
+  z-index: 99;
+  padding: 15px 20px;
+  position: fixed;
+  gap: 30px;
+  border-radius: 10px;
+  div {
+    color: #acacac;
+    @include d-flex(space-between, center, row);
+    gap: 10px;
+
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: white;
+  }
+}

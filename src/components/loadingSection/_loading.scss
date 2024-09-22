@@ -1,0 +1,19 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.loading-section {
+  margin: 50px 0;
+  .container {
+    display: flex;
+    overflow: hidden;
+    max-width: 1200px;
+    padding: 0 20px;
+    .movie {
+      min-width: 250px;
+      height: 375px;
+      @include loadingAni(dark);
+      margin-right: 15px;
+      border-radius: 10px;
+    }
+  }
+}

@@ -1,0 +1,215 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.contact-us {
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+  .heading {
+    padding: 15px 0;
+    text-align: center;
+    .logo {
+      svg {
+        width: 40px;
+        height: 40px;
+        color: var(--main-color);
+      }
+    }
+    h1 {
+      color: var(--text-color);
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    p {
+      color: var(--seconde-color);
+      font-size: 14px;
+    }
+  }
+  .contact {
+    --color: #333;
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      );
+    background-size: 55px 55px;
+    padding: 15px;
+
+    .contacting {
+      @include gridLayout(250px, 1fr, 15px);
+      margin-top: 50px;
+      & > div {
+        @include d-flex(start, start, column);
+        background-color: var(--background-color);
+        height: 180px;
+        border-radius: 5px;
+        padding: 15px;
+        color: var(--text-color);
+        border: 1px solid #999;
+        .logo {
+          width: 40px;
+          height: 40px;
+          @include d-flex(center, center, row);
+          border-radius: 3px;
+          border: 1px solid #444;
+        }
+        .info {
+          margin-top: auto;
+          p {
+            color: var(--text-color);
+            margin-bottom: 10px;
+          }
+          span {
+            color: var(--seconde-color);
+            display: block;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+          a {
+            color: var(--main-color);
+          }
+        }
+      }
+    }
+  }
+  .frequence-questions {
+    margin-top: 30px;
+  }
+  .questions {
+    width: 500px;
+    margin: auto;
+    @include responsive(small) {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+      .question-header {
+        cursor: pointer;
+        @include d-flex(start, center, row);
+        input {
+          display: none;
+        }
+        svg:first-of-type {
+          color: var(--main-color);
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          padding: 5px;
+          background-color: var(--text-color);
+        }
+        h3 {
+          color: var(--text-color);
+          margin-left: 10px;
+          text-transform: capitalize;
+          font-weight: 100;
+          @include responsive(small) {
+            font-size: 13px;
+          }
+        }
+        svg:last-child {
+          color: var(--text-color);
+          margin-left: auto;
+        }
+        &:has(input:checked) + .question-content {
+          height: 55px;
+        }
+        &:has(input:checked) svg:last-child {
+          transform: rotate(180deg);
+        }
+      }
+      .question-content {
+        color: var(--seconde-color);
+        font-size: 14px;
+        margin-top: 5px;
+        text-align: justify;
+        padding-left: 45px;
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+  form {
+    width: 600px;
+    margin: auto;
+    background:
+      linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    border-radius: 16px;
+    @include d-flex(start, start, column);
+    gap: 20px;
+    @include responsive(small){
+      width: calc(100% - 20px);
+      flex-direction: column;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #717171;
+      font-weight: 600;
+      font-size: 12px;
+      width: 100%;
+      span {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+    .name {
+      @include d-flex(start, center, row);
+      gap: 20px;
+      width: 100%;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      background-color: transparent;
+      border: 1px solid #414141;
+    }
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+    button {
+      @include d-flex(center, center, row);
+      color: #717171;
+      font-weight: 600;
+      background: #313131;
+      border: 1px solid #414141;
+      padding: 12px 16px;
+      gap: 8px;
+      margin-top: 8px;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-left: auto;
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}

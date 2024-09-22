@@ -1,0 +1,169 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+@use "./SearchBar/searchBar" as *;
+$mainPadding: 10px;
+
+header {
+  background-color: black;
+  @include shadow;
+  position: fixed;
+  width: $navBarClose;
+  overflow: hidden;
+  transition: 0.4s all ease;
+  top: 0;
+  padding: 10px;
+  @include d-flex(center, start, column);
+  @include responsive("small") {
+    padding: 10px 10px;
+  }
+  height: 100%;
+  z-index: 999999;
+  &:hover {
+    width: $navBarOpen;
+    @include responsive(small) {
+      width: $navBarClose;
+    }
+  }
+  // logo
+  .logo {
+    color: $whiteColor;
+    margin-bottom: 55px;
+    text-align: center;
+    @include responsive("small") {
+      margin-bottom: 25px;
+    }
+  }
+
+  // linkes
+  ul {
+    list-style: none;
+    li {
+      margin-bottom: 5px;
+      min-width: 200px;
+      position: relative;
+      border-radius: 3px;
+      &:hover {
+        background-color: $mainColor;
+      }
+      a {
+        @include d-flex(start, center, row);
+        padding: $mainPadding;
+        position: relative;
+        color: $whiteColor;
+        @include responsive("small") {
+          padding: 5px 15px;
+        }
+        .icon {
+          color: $whiteColor;
+          display: block;
+          margin-right: 25px;
+          @include responsive("small") {
+            margin-right: 30px;
+            width: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  // left navbar
+
+  .leftNavbar {
+    position: relative;
+    .search {
+      position: relative;
+      @include d-flex(start, center, row);
+      min-width: 200px;
+      padding: $mainPadding;
+      color: $whiteColor;
+      cursor: pointer;
+
+      @include responsive("small") {
+        padding: 5px 15px;
+      }
+      &:hover {
+        background-color: $mainColor;
+        border-radius: 3px;
+      }
+
+      .search-icon {
+        color: $whiteColor;
+        margin-right: 25px;
+        position: relative;
+        @include responsive("small") {
+          margin-right: 30px;
+          width: 25px;
+        }
+      }
+    }
+
+    .user {
+      @include d-flex(start, center, row);
+      min-width: 200px;
+      padding: $mainPadding;
+      color: $whiteColor;
+      @include responsive("small") {
+        padding: 5px 15px;
+      }
+      &:hover {
+        background-color: $mainColor;
+        border-radius: 3px;
+      }
+      .user-icon {
+        margin-right: 25px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: var(--text-color);
+        text-align: center;
+        line-height: 30px;
+        text-transform: capitalize;
+        @include responsive("small") {
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          margin-right: 30px;
+        }
+      }
+      p {
+        color: $whiteColor;
+      }
+    }
+  }
+  &:hover .cat {
+    span:first-child {
+      opacity: 1;
+      color: $whiteColor;
+      @include responsive(small){
+        opacity: 0;
+      }
+    }
+    span:last-child {
+      opacity: 0;
+      @include responsive(small){
+        opacity: 1;
+      }
+    }
+  }
+  .cat {
+    padding: 12px;
+    position: relative;
+    margin: 17px 0;
+    @include responsive("small") {
+      margin: 10px 0;
+    }
+    span {
+      @include center("top");
+    }
+    span:first-child {
+      opacity: 0;
+      color: $whiteColor;
+      font-size: 17px;
+    }
+    span:last-child {
+      width: 30px;
+      background-color: $whiteColor;
+      height: 2px;
+    }
+  }
+}

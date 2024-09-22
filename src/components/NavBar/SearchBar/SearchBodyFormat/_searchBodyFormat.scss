@@ -1,0 +1,175 @@
+@use "../../../../scss/mixins" as *;
+@use "../../../../scss/variables" as *;
+
+.search-body-format {
+  max-height: 500px;
+  overflow-y: scroll;
+  padding: 10px 20px;
+  
+  h4.title {
+    text-align: left;
+    color: var(--seconde-color);
+    font-size: 17px;
+  }
+  .media-type-person {
+    .persons-search {
+      .person-search {
+        @include d-flex(start, center, row);
+        margin: 10px 0;
+        .image {
+          img,
+          .img {
+            @include circle(50px);
+            object-fit: cover;
+            object-position: top;
+            margin-right: 10px;
+          }
+          .img {
+            background-color: black;
+            @include d-flex(center, center, row);
+            color: var(--text-color);
+          }
+        }
+        .details {
+          color: var(--seconde-color);
+          h5 {
+            color: var(--text-color);
+            font-size: 15px;
+            text-align: left;
+          }
+          .info {
+            @include d-flex(start, center, row);
+            p.department {
+              font-size: 14px;
+            }
+            p.gender {
+              font-size: 11px;
+            }
+            .separator {
+              @include circle(4px);
+              background-color: var(--seconde-color);
+              margin: 0 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .media-type-movie {
+    .movies-search {
+      .movie-search {
+        @include d-flex(start, center, row);
+        margin: 10px 0;
+        .image {
+          margin-right: 10px;
+          img,
+          .img {
+            border-radius: 3px;
+            width: 100px;
+          }
+          .img {
+            @include d-flex(center, center, row);
+            background-color: black;
+            height: 150px;
+          }
+        }
+        .details {
+          color: var(--seconde-color);
+
+          h5 {
+            color: var(--text-color);
+            font-size: 17px;
+            text-align: left;
+          }
+          .info {
+            @include d-flex(start, center, row);
+            .popularity {
+              @include d-flex(start, center, row);
+              font-size: 12px;
+              svg {
+                color: gold;
+                margin-right: 3px;
+              }
+            }
+            .genre {
+              @include d-flex(start, center, row);
+              span {
+                @include d-flex(start, center, row);
+                font-size: 11px;
+                &::before {
+                  content: "";
+                  @include circle(5px);
+                  background-color: var(--seconde-color);
+                  display: block;
+                  margin: 0 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .media-type-tv {
+    .tv-search {
+      .tv-search {
+        @include d-flex(start, center, row);
+        margin: 10px 0;
+        .image {
+          margin-right: 10px;
+          img,
+          .img {
+            border-radius: 5px;
+            width: 200px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+          }
+          .img {
+            @include d-flex(center, center, row);
+            background-color: black;
+            svg {
+              color: var(--text-color);
+            }
+          }
+        }
+        .details {
+          color: var(--seconde-color);
+
+          h5 {
+            color: var(--text-color);
+            font-size: 17px;
+            text-align: left;
+          }
+          .info {
+            @include d-flex(start, center, row);
+            margin-top: 10px;
+            .popularity {
+              @include d-flex(start, center, row);
+              font-size: 12px;
+              svg {
+                color: gold;
+                margin-right: 3px;
+              }
+            }
+            .genre {
+              @include d-flex(start, center, row);
+              flex-wrap: no-wrap;
+              span {
+                @include d-flex(start, center, row);
+                font-size: 11px;
+                &::before {
+                  content: "";
+                  @include circle(5px);
+                  background-color: var(--seconde-color);
+                  display: block;
+                  margin: 0 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

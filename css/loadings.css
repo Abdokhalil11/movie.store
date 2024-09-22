@@ -1,0 +1,337 @@
+@keyframes load {
+  100% {
+    background-position: -100% 0;
+  }
+}
+.loading {
+  position: relative;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+.loading .loading-background .img {
+  max-width: 100%;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  height: 650px;
+}
+@media (max-width: 992px) {
+  .loading .loading-background .img {
+    background: linear-gradient(120deg, #e5e5e5 30%, #f2f2f2 38%, #f2f2f2 40%, #e5e5e5 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: load 2s infinite;
+    height: 200px;
+    border-radius: 0 0 20px 20px;
+  }
+}
+.loading .loading-background .details {
+  position: absolute;
+  padding: 0 15px;
+  bottom: 20px;
+}
+@media (max-width: 992px) {
+  .loading .loading-background .details {
+    position: relative;
+    bottom: 0;
+    margin: 20px 0;
+  }
+}
+.loading .loading-background .details .text {
+  width: 250px;
+  height: 50px;
+  border-radius: 2px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f2f2f2 38%, #f2f2f2 40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+@media (max-width: 768px) {
+  .loading .loading-background .details .text {
+    width: 100%;
+  }
+}
+.loading .loading-background .details .descripition {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f2f2f2 38%, #f2f2f2 40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .loading .loading-background .details .descripition {
+    height: 100px;
+    width: 100%;
+  }
+}
+.loading .loading-movies {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  max-width: 50%;
+  overflow: hidden;
+  right: 0;
+}
+@media (max-width: 992px) {
+  .loading .loading-movies {
+    position: relative;
+    max-width: 100%;
+  }
+}
+.loading .loading-movies .loading-movie {
+  min-width: 180px;
+  height: 240px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f2f2f2 38%, #f2f2f2 40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+@media (max-width: 992px) {
+  .loading .loading-movies .loading-movie {
+    min-width: 90px;
+    height: 120px;
+  }
+}
+
+.loading-section {
+  margin: 50px 0;
+}
+.loading-section .container {
+  display: flex;
+  overflow: hidden;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+.loading-section .container .movie {
+  min-width: 250px;
+  height: 375px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.background-login-loading {
+  position: relative;
+  background-color: #000000;
+  max-width: 50%;
+  max-height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .background-login-loading {
+    max-width: 100%;
+  }
+}
+.background-login-loading::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.background-login-loading > div {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  left: 0;
+  gap: 10px;
+  margin-bottom: 10px;
+  animation: slide 10s infinite linear alternate;
+}
+.background-login-loading > div:nth-child(2) {
+  left: -100px;
+}
+.background-login-loading > div div {
+  min-width: 250px;
+  height: 375px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .background-login-loading > div div {
+    min-width: 150px;
+    height: 250px;
+  }
+}
+
+.background-sign-loading {
+  position: relative;
+  background-color: #000000;
+  max-height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+.background-sign-loading::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.background-sign-loading > div {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  left: 0;
+  gap: 10px;
+  margin-bottom: 10px;
+  animation: slide 10s infinite linear alternate;
+}
+.background-sign-loading > div:nth-child(2) {
+  left: -100px;
+}
+.background-sign-loading > div div {
+  min-width: 250px;
+  height: 375px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .background-sign-loading > div div {
+    min-width: 150px;
+    height: 250px;
+  }
+}
+
+.tailer-loading {
+  position: relative;
+}
+.tailer-loading .image {
+  max-width: 100%;
+  min-height: 670px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+@media (max-width: 992px) {
+  .tailer-loading .image {
+    min-height: 100vh;
+  }
+}
+.tailer-loading .details {
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+}
+.tailer-loading .details .title {
+  width: 240px;
+  height: 50px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f2f2f2 38%, #f2f2f2 40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  border-radius: 3px;
+}
+.tailer-loading .details .description {
+  width: 500px;
+  height: 120px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f2f2f2 38%, #f2f2f2 40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  border-radius: 3px;
+}
+.tailer-loading .details .button {
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f2f2f2 38%, #f2f2f2 40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+.video-loading {
+  margin: 50px 0;
+}
+.video-loading .types-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.video-loading .types-loading div {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  margin: 0 10px;
+}
+.video-loading .player-loading {
+  margin-top: 20px;
+}
+.video-loading .player-loading .carsouel div {
+  min-width: 350px;
+  height: 250px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  border-radius: 10px;
+}
+
+.gallery-loading .carsouel div {
+  min-width: 300px;
+  height: 195px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+
+.reviwe-loading {
+  width: calc(100% - 400px);
+  margin: 50px auto;
+}
+@media (max-width: 992px) {
+  .reviwe-loading {
+    width: 100%;
+  }
+}
+.reviwe-loading div {
+  height: 200px;
+  border-radius: 20px;
+  margin: 10px 0;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+
+.similar-loading {
+  margin-top: 50px;
+}
+.similar-loading .carsouel div {
+  min-width: 250px;
+  height: 375px;
+  background: linear-gradient(120deg, #333 30%, #444 38%, #444 40%, #333 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+  border-radius: 20px;
+}/*# sourceMappingURL=loadings.css.map */
